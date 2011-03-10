@@ -5,7 +5,7 @@
     #question_headers li { display: inline-block; list-style-type: none; width: 400px; font-weight: bold; }
     .wrapper { border: 1px dotted #CCC; width: 750px; padding: 10px; }
     .row_container div, .answers div { display: inline; }
-    .row_container ul, .answers ul { width: 150px; display: inline-block; }
+    .row_container ul, .answers ul { width: 300px; display: inline-block; }
     .edit_options li { display: inline; list-style-type: none; margin-right: 20px; }
   </style>
 <% end %>
@@ -29,6 +29,7 @@
             <ul>
               <li><%= link_to "Edit", edit_question_path(q) %></li>
               <li><%= link_to "Delete", question_path(q), :confirm => "Are you sure?", :method => :delete %></li>
+              <li><%= link_to "Add a new question", new_question_path %></li>
             </ul>
           </div>
         </div>
