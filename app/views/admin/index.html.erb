@@ -4,11 +4,12 @@
     h1 { background-color: red; font-size: 2em; height: 50px; text-align: center; padding-top: 10px; }
     #question_headers li { display: inline-block; list-style-type: none; width: 400px; font-weight: bold; }
     .wrapper { border: 1px dotted #CCC; width: 750px; padding: 10px; }
-    .row_container div { display: inline; }
-    .row_container ul, li{ width: 150px; display: inline-block; }
+    .row_container div, .answers div { display: inline; }
+    .row_container ul, .answers ul { width: 150px; display: inline-block; }
     .edit_options li { display: inline; list-style-type: none; margin-right: 20px; }
   </style>
 <% end %>
+
 <h1>Welcome Administrator</h1>
 
 <div id="admin_panel">
@@ -32,8 +33,16 @@
           </div>
         </div>
         <div class="answers">
+        <% answer_counter = 1 %>
         <% q.panswers.each do |a| %>
-          <p><%= a.p_answer %></p>
+          <div><%= "Answer ##{answer_counter}: " %><% answer_counter = answer_counter + 1 %><%= a.p_answer %></div>
+          <div class="edit_options">
+            <ul>
+              <li><%= link_to "Edit", edit_panswer_path(a) %></li>
+              <li><%= link_to "Delete", panswer_path(a), :confirm => "Are you sure?", :method => :delete %></li>
+            </ul>
+          </div>
+          <br />
         <% end %> 
         </div>
       </div>
