@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  p_answer: MyString
+  answer_count: 1
+  question_id: 1
+
+two:
+  p_answer: MyString
+  answer_count: 1
+  question_id: 1

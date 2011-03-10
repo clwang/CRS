@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>P answer:</b>
+  <%= @panswer.p_answer %>
+</p>
+
+<p>
+  <b>Answer count:</b>
+  <%= @panswer.answer_count %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @panswer.question_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_panswer_path(@panswer) %> |
+<%= link_to 'Back', panswers_path %>

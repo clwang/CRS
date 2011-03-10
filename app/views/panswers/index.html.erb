@@ -1,0 +1,28 @@
+<h1>Listing panswers for Question: <%= Question.last.question%></h1>
+
+<table>
+  <tr>
+    <th>P answer</th>
+    <th>Answer count</th>
+    <th>Question ID</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Question.last.panswers.each do |panswer| %>
+  <tr>
+    <td><%= panswer.p_answer %></td>
+    <td><%= panswer.answer_count %></td>
+    <td><%= panswer.question_id %></td>
+    <td><%= link_to 'Show', panswer %></td>
+    <td><%= link_to 'Edit', edit_panswer_path(panswer) %></td>
+    <td><%= link_to 'Destroy', panswer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Panswer', new_panswer_path %>
+<%= link_to('Add another Question', {:controller => 'questions', :action => 'new'})%>
