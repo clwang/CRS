@@ -21,14 +21,6 @@
   	<td><%= panswer.p_answer%></td>
   	<td><%= link_to('Select Answer', {:controller => 'panswers', :action => 'select_answer', :id=>panswer.id})%></td>
   </tr>
-  <tr>
-  	<td>Answer Count:</td>
-  	<td><%= panswer.answer_count%></td>
-  </tr>
-  <tr>
-  	<td>Foriegn Key:</td>
-  	<td><%= panswer.question_id%></td>
-  </tr>
   <% end %>
 <% end %>
 </table>

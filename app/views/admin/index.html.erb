@@ -1,0 +1,42 @@
+<%= content_for :styles do %>
+  <style type="text/css" media="screen">
+    body { background-color: #EEE; }
+    h1 { background-color: red; font-size: 2em; height: 50px; text-align: center; padding-top: 10px; }
+    #question_headers li { display: inline-block; list-style-type: none; width: 400px; font-weight: bold; }
+    .wrapper { border: 1px dotted #CCC; width: 750px; padding: 10px; }
+    .row_container div { display: inline; }
+    .row_container ul, li{ width: 150px; display: inline-block; }
+    .edit_options li { display: inline; list-style-type: none; margin-right: 20px; }
+  </style>
+<% end %>
+<h1>Welcome Administrator</h1>
+
+<div id="admin_panel">
+  <div id="question_headers">
+    <ul>
+      <li>Questions</li>
+      <li>Edit Options</li>
+    </ul>
+  </div>
+  <% counter = 1 %>
+  <% @questions.each do |q| %>
+    <div class="wrapper">
+      <div class="questions">
+        <div class="row_container">
+          <div><%= counter %>)&nbsp;<% counter = counter + 1 %><%= q.question %></div>
+          <div class="edit_options">
+            <ul>
+              <li><%= link_to "Edit", edit_question_path(q) %></li>
+              <li><%= link_to "Delete", question_path(q), :confirm => "Are you sure?", :method => :delete %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="answers">
+        <% q.panswers.each do |a| %>
+          <p><%= a.p_answer %></p>
+        <% end %> 
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
