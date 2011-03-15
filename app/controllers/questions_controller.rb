@@ -82,4 +82,14 @@ class QuestionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def update_answer
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => { :status => :ok } }
+      format.xml  { head :ok }
+    end
+  end
+  
 end

@@ -1,7 +1,11 @@
 CRS::Application.routes.draw do
   resources :panswers
 
-  resources :questions
+  resources :questions do
+    member do 
+      put 'update_answer'
+    end
+  end
   
   
 

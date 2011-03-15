@@ -1,17 +1,49 @@
+<%= content_for :javascript do %>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('#question_cont div:first').show();
+  });
+</script>
+
+<% end %>
+
 <h2>Questions</h2>
 
 <div id="question_cont">
   
   
   <!-- Each question we will create a form that will do an ajax submit of the form -->
-  
+  <% count = 0 %>
+  <% max_count = @questions.size %>
   <% @questions.each do |q| %>
-  <div class="form_<%= q.id %>">
-    <%= form_for q do |f| %>
+  <% count = count + 1 %>
+  <div id="form_<%= q.id %>" class="hide">
+    <%= form_for q, :url => update_answer_question_path(q, :format => :json),  do |f| %>
     <p><%= q.question %></p>
       <%= select("post", "answer", q.panswers.collect { |p| [ p.p_answer, p.id ] }, {}, { :size => q.panswers.count } ) %>
     <% end %>
+    <a href="#" id="form_submit_btn_<%= q.id %>">Next</a>
   </div>
+  <script type="text/javascript" charset="utf-8">
+    $('#form_submit_btn_<%= q.id %>').click(function(event) {
+        $('#edit_question_<%= q.id %>').ajaxSubmit({
+          datatype: 'json',
+          success: function(){
+          }
+        });
+        $('#form_<%= q.id %>').hide();
+        <% if count == max_count %>
+          $('#finished').show();
+        <% else %>
+          $('#form_<%= q.id + 1 %>').show();
+        <% end %>
+    });
+  </script>
   <% end %>
   
+</div>
+
+<div id="finished" class="hide">
+  <h3>Congrats you have finished!</h3>
+  <%= link_to "Click here to see the results", question_path(1) %>
 </div>
