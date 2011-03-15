@@ -1,0 +1,40 @@
+<%= content_for :javascript do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+      $('#add_btn').click(function(event) {
+        $('.answers').append($('.answer_template').html());
+      });
+    });
+  </script>
+<% end %>
+
+<div class="answer_template hide">
+  <%= text_field_tag 'answers[]','', :size => 40 %> <br />
+</div>
+
+<%= form_for(@question) do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question %><br />
+    <%= f.text_field :question %>
+  </div>
+  <p>Answers:</p>
+  <div class="answers">
+    <%= text_field_tag 'answers[]','', :size => 40 %> <br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <a href="#" id="add_btn">Add Another</a> 
+  </div>
+<% end %>
