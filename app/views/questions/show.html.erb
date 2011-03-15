@@ -13,6 +13,9 @@
     </ol>
   </div>
   <div id="result_right">
-    <img src="<%= build_google_graphs_url('p3',@question.panswers) %>">
+    <img src="<%= build_google_graphs_url('p3',@question.panswers) %>" />
   </div>
 </div>
+
+
+<%= link_to "Back to Results", answers_path %>

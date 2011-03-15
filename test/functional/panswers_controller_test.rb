@@ -44,6 +44,6 @@ class PanswersControllerTest < ActionController::TestCase
       delete :destroy, :id => @panswer.to_param
     end
 
-    assert_redirected_to panswers_path
+    assert_redirected_to answers_path
   end
 end

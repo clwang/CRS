@@ -1,12 +1,11 @@
 CRS::Application.routes.draw do
-  resources :panswers
+  resources :panswers, :as => "answers"
 
   resources :questions do
     member do 
       put 'update_answer'
     end
   end
-  
   
 
   # The priority is based upon order of creation:

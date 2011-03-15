@@ -1,9 +1,9 @@
 module ApplicationHelper
   
-  def build_google_graphs_url(graph_type = 'bvs', object)
+  def build_google_graphs_url(graph_type = 'p3', object)
     base_google_graph_url = "https://chart.googleapis.com/chart?"
     chart = graph_type
-    chart_size = "450x200"
+    chart_size = "700x200"
     total = object.sum('answer_count')
     data = []
     names = []
