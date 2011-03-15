@@ -85,6 +85,14 @@ class QuestionsController < ApplicationController
   
   def update_answer
     
+    @question = Question.find(params[:id])
+    #check to see if the user inputted an answer
+    if( params[:post] )
+      @answer = @question.panswers.find(params[:post][:answer])
+      @answer.answer_count = @answer.answer_count + 1
+      @answer.save
+    end
+    
     respond_to do |format|
       format.html
       format.json { render :json => { :status => :ok } }
