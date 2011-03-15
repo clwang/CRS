@@ -41,12 +41,14 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
-	
-	
+    
     respond_to do |format|
       if @question.save
-      	#redirects to the panswers controller method new to add possibles answers to the question
-		format.html { redirect_to({:controller => 'panswers', :action => 'new'}) }
+        # create all the answers associated with question
+        params[:answers].each do |answer|
+    	    @question.panswers.create(:answer_count => 0, :p_answer => answer )
+    	  end
+		    format.html { redirect_to '/admin' }
         format.xml  { render :xml => @question, :status => :created, :location => @question }  
       else
         format.html { render :action => "new" }
