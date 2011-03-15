@@ -1,31 +1,17 @@
-<h1>Listing questions</h1>
+<h2>Questions</h2>
 
-<table>
-  <tr>
-    <th>Question</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.question %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  <% question.panswers.each do |panswer| %>
-  <tr>
-  	<td>Possible Response:</td>
-  	<td><%= panswer.p_answer%></td>
-  	<td><%= link_to('Select Answer', {:controller => 'panswers', :action => 'select_answer', :id=>panswer.id})%></td>
-  </tr>
+<div id="question_cont">
+  
+  
+  <!-- Each question we will create a form that will do an ajax submit of the form -->
+  
+  <% @questions.each do |q| %>
+  <div class="form_<%= q.id %>">
+    <%= form_for q do |f| %>
+    <p><%= q.question %></p>
+      <%= select("post", "answer", q.panswers.collect { |p| [ p.p_answer, p.id ] }, {}, { :size => q.panswers.count } ) %>
+    <% end %>
+  </div>
   <% end %>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Question', new_question_path %>
-<%= link_to('Reset Answer Counts', {:controller => 'panswers', :action=>'reset', :id=>0})%>
+  
+</div>
