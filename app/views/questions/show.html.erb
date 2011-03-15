@@ -1,10 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h2>Results</h2>
 
-<p>
-  <b>Question:</b>
-  <%= @question.question %>
-</p>
+<p>Question: <%= @question.question %></p>
 
+<div id="result_cont">
+  <div id="result_left">
+    <p>Possible Answers:</p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+    <ol>
+      <% @question.panswers.each do |a| %>
+        <li><%= a.p_answer %>  |  <span>Count: <%= a.answer_count %></span></li>
+      <% end %>
+    </ol>
+  </div>
+  <div id="result_right">
+    <img src="<%= build_google_graphs_url('p3',@question.panswers) %>">
+  </div>
+</div>

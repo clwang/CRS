@@ -27,14 +27,14 @@
         $('#edit_question_<%= q.id %>').ajaxSubmit({
           datatype: 'json',
           success: function(){
+            $('#form_<%= q.id %>').hide();
+            <% if count == max_count %>
+              $('#finished').show();
+            <% else %>
+              $('#form_<%= q.id + 1 %>').show();
+            <% end %>
           }
         });
-        $('#form_<%= q.id %>').hide();
-        <% if count == max_count %>
-          $('#finished').show();
-        <% else %>
-          $('#form_<%= q.id + 1 %>').show();
-        <% end %>
     });
   </script>
   <% end %>
