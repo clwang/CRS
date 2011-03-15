@@ -39,8 +39,8 @@
           <div><%= "Answer ##{answer_counter}: " %><% answer_counter = answer_counter + 1 %><%= a.p_answer %></div>
           <div class="edit_options">
             <ul>
-              <li><%= link_to "Edit", edit_panswer_path(a) %></li>
-              <li><%= link_to "Delete", panswer_path(a), :confirm => "Are you sure?", :method => :delete %></li>
+              <li><%= link_to "Edit", edit_answer_path(a) %></li>
+              <li><%= link_to "Delete", answer_path(a), :confirm => "Are you sure?", :method => :delete %></li>
             </ul>
           </div>
           <br />

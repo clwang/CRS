@@ -3,7 +3,6 @@ class PanswersController < ApplicationController
   # GET /panswers.xml
   def index
     @panswers = Panswer.all
-    @questions = Question.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @panswers }
