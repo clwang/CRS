@@ -6,63 +6,79 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-Question.create(:question => "What is rails  ORM  by default?")
-Question.create(:question => "What does CRUD stands for?")
-Question.create(:question => "How to run rails console")
-Question.create(:question => "Which ActiveRecord convention isn't true?")
-Question.create(:question => "Which saves a record to the database?")
-Question.create(:question => "What is not part of the action pack components?")
-Question.create(:question => "Which is an alternative to ERB?")
-Question.create(:question => "ActionPack Helpers are meant to help?")
-Question.create(:question => "Which action pack request cycle is correct?")
-Question.create(:question => "What is the proper way to name a template?")
+@question1 = Question.create(:question => "What is rails  ORM  by default?")
+@question1.panswers.create([
+  { :p_answer => "Datamapper", :answer_count => 0 },
+  { :p_answer => "ActiveRecord", :answer_count => 0 },
+  { :p_answer => "Sequel", :answer_count => 0 },
+  { :p_answer => "ActiveSQL", :answer_count => 0 }
+  ])
 
+@question2 = Question.create(:question => "What does CRUD stands for?")
+@question2.panswers.create([
+  { :p_answer => "create, run, update, and delete", :answer_count => 0 },
+  { :p_answer => "create, run, update and dim", :answer_count => 0 },
+  { :p_answer => "create, read, update, delete", :answer_count => 0 },
+  { :p_answer => "cut, rake, update and delete", :answer_count => 0 }
+  ])
 
+@question3 = Question.create(:question => "How to run rails console")
+@question3.panswers.create([
+  { :p_answer => "$> rails new console", :answer_count => 0 },
+  { :p_answer => "$> rails console", :answer_count => 0 },
+  { :p_answer => "$> rake console", :answer_count => 0 },
+  { :p_answer => "$> rails start console", :answer_count => 0 }
+  ])
 
-Panswer.create(:answer => "Datamapper", :count => 0, :question_id => 1)
-Panswer.create(:answer => "ActiveRecord", :count => 0, :question_id => 1)
-Panswer.create(:answer => "Sequel", :count => 0, :question_id => 1)
-Panswer.create(:answer => "ActiveSQL", :count => 0, :question_id => 1)
-
-Panswer.create(:answer => "create, run, update, and delete", :count => 0, :question_id => 2)
-Panswer.create(:answer => "create, run, update and dim", :count => 0, :question_id => 2)
-Panswer.create(:answer => "create, read, update, delete", :count => 0, :question_id => 2)
-Panswer.create(:answer => "cut, rake, update and delete", :count => 0, :question_id => 2)
-
-Panswer.create(:answer => "$> rails new console", :count => 0, :question_id => 3)
-Panswer.create(:answer => "$> rails console", :count => 0, :question_id => 3)
-Panswer.create(:answer => "$> rake console", :count => 0, :question_id => 3)
-Panswer.create(:answer => "$> rails start console", :count => 0, :question_id => 3)
-
-Panswer.create(:answer => "tables can be both plural and singular", :count => 0, :question_id => 4)
-Panswer.create(:answer => "class names are singular", :count => 0, :question_id => 4)
-Panswer.create(:answer => "table names are plural", :count => 0, :question_id => 4)
-Panswer.create(:answer => "tables contain an identity column id", :count => 0, :question_id => 4)
-
-Panswer.create(:answer => "user.saveToDatabase", :count => 0, :question_id => 5)
-Panswer.create(:answer => "user.store", :count => 0, :question_id => 5)
-Panswer.create(:answer => "user.insert", :count => 0, :question_id => 5)
-Panswer.create(:answer => "user.save", :count => 0, :question_id => 5)
-
-Panswer.create(:answer => "Action Controller", :count => 0, :question => 6)
-Panswer.create(:answer => "Action View", :count => 0, :question => 6)
-Panswer.create(:answer => "MySQL", :count => 0, :question => 6)
-Panswer.create(:answer => "Embedded Ruby", :count => 0, :question => 6)
-
-Panswer.create(:answer => "Erubis", :count => 0, :question => 7)
-Panswer.create(:answer => "ActiveRecord", :count => 0, :question => 7)
-Panswer.create(:answer => "Apache", :count => 0, :question => 7)
-
-Panswer.create(:answer => "the view", :count => 0, :question => 8)
-Panswer.create(:answer => "the model", :count => 0, :question => 8)
-Panswer.create(:answer => "the controller", :count => 0, :question => 8)
-
-Panswer.create(:answer => "browser->routing->action controller-> action view -> browser", :count => 0, :question_id => 9)
-Panswer.create(:answer => "browser->action controller-> routing-> action view -> browser", :count => 0, :question_id => 9)
-Panswer.create(:answer => "browser->action view ->action controller-> routing-> action view -> browser", :count => 0, :question_id => 9)
-Panswer.create(:answer => "browser->routing->action controller-> browser", :count => 0, :question_id => 9)
-
-Panswer.create(:answer => "name.html.erb", :count => 0, :question_id => 10)
-Panswer.create(:answer => "name.html", :count => 0, :question_id => 10)
-Panswer.create(:answer => "name.ruby.html", :count => 0, :question_id => 10)
-Panswer.create(:answer => "name.rb", :count => 0, :question_id => 10)
+@question4 = Question.create(:question => "Which ActiveRecord convention isn't true?")
+@question4.panswers.create([
+  { :p_answer => "tables can be both plural and singular", :answer_count => 0 },
+  { :p_answer => "class names are singular", :answer_count => 0 },
+  { :p_answer => "table names are plural", :answer_count => 0 },
+  { :p_answer => "tables contain an identity column id", :answer_count => 0 }
+  ])
+  
+@question5 = Question.create(:question => "Which saves a record to the database?")
+@question5.panswers.create([
+  { :p_answer => "user.saveToDatabase", :answer_count => 0 },
+  { :p_answer => "user.store", :answer_count => 0 },
+  { :p_answer => "user.insert", :answer_count => 0 },
+  { :p_answer => "user.save", :answer_count => 0 }
+  ])
+  
+@question6 = Question.create(:question => "What is not part of the action pack components?")
+@question6.panswers.create([
+  { :p_answer => "Action Controller", :answer_count => 0 },
+  { :p_answer => "Action View", :answer_count => 0 },
+  { :p_answer => "MySQL", :answer_count => 0 },
+  { :p_answer => "Embedded Ruby", :answer_count => 0 }
+  ])
+  
+@question7 = Question.create(:question => "Which is an alternative to ERB?")
+@question7.panswers.create([
+ { :p_answer => "Erubis", :answer_count => 0 },
+ { :p_answer => "ActiveRecord", :answer_count => 0 },
+ { :p_answer => "Apache", :answer_count => 0 }
+  ])
+  
+@question8 = Question.create(:question => "ActionPack Helpers are meant to help?")
+@question8.panswers.create([
+  { :p_answer => "the view", :answer_count => 0 },
+  { :p_answer => "the model", :answer_count => 0 },
+  { :p_answer => "the controller", :answer_count => 0 }
+  ])
+  
+@question9 = Question.create(:question => "Which action pack request cycle is correct?")
+@question9.panswers.create([
+  { :p_answer => "browser->routing->action controller-> action view -> browser", :answer_count => 0 },
+  { :p_answer => "browser->action controller-> routing-> action view -> browser", :answer_count => 0 },
+  { :p_answer => "browser->action view ->action controller-> routing-> action view -> browser", :answer_count => 0 },
+  { :p_answer => "browser->routing->action controller-> browser", :answer_count => 0 }
+  ])
+@question10 = Question.create(:question => "What is the proper way to name a template?")
+@question10.panswers.create([
+  { :p_answer => "name.html.erb", :answer_count => 0 },
+  { :p_answer => "name.html", :answer_count => 0 },
+  { :p_answer => "name.ruby.html", :answer_count => 0 },
+  { :p_answer => "name.rb", :answer_count => 0 }
+  ])
