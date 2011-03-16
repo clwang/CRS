@@ -22,7 +22,7 @@
       <p><%= q.question %></p>
         <%= select("post", "answer", q.panswers.collect { |p| [ p.p_answer, p.id ] }, {}, { :size => q.panswers.count } ) %>
       <% end %>
-      <a href="#" id="form_submit_btn_<%= q.id %>">Next</a>
+      <a href="#" class="button" id="form_submit_btn_<%= q.id %>">Next</a>
     </div>
     <script type="text/javascript" charset="utf-8">
       $('#form_submit_btn_<%= q.id %>').click(function(event) {
@@ -40,13 +40,12 @@
       });
     </script>
   <% end %>
-
+    
+    <div id="finished" class="hide">
+      <h3 id="congrats">Congrats you have finished!</h3><br />
+      <%= link_to "Click here to see the results", answers_path, { :class => 'button' } %>
+    </div>
   
-  </div>
-
-  <div id="finished" class="hide">
-    <h3>Congrats you have finished!</h3>
-    <%= link_to "Click here to see the results", answers_path %>
   </div>
 
 </div>
