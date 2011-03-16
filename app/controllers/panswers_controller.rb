@@ -86,14 +86,6 @@ class PanswersController < ApplicationController
       format.xml  { head :ok }
     end
   end
- 
-  def select_answer
-  	@panswer = Panswer.find(params[:id])
-  	@count = @panswer.answer_count + 1
-  	@panswer.update_attributes(:answer_count=> @count)
-  	
-  	redirect_to(:controller=>'questions', :action=> 'index')
-  end
   
   def reset
   	@panswers = Panswer.all

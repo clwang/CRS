@@ -1,5 +1,9 @@
 CRS::Application.routes.draw do
-  resources :panswers, :as => "answers"
+  resources :panswers, :as => "answers" do
+    member do
+      put 'reset'
+    end
+  end
 
   resources :questions do
     member do 
@@ -7,6 +11,9 @@ CRS::Application.routes.draw do
     end
   end
   
+  match '/panswers/reset' => 'panswers#reset'
+  
+  match '/admin' => 'admin#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,5 +70,5 @@ CRS::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))'
 end
