@@ -8,6 +8,15 @@ body{
   display: none;
 }
 
+#banner{
+	width: 586px;
+	margin: 0 auto;
+	height: 173px;
+	background-image: url("/images/banner.png");
+	background-repeat:repeat-x;
+	padding-bottom:50px;
+}
+
 #container{
 	
 	background-color: white;
