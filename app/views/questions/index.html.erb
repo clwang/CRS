@@ -29,11 +29,11 @@
           $('#edit_question_<%= q.id %>').ajaxSubmit({
             datatype: 'json',
             success: function(){
-              $('#form_<%= q.id %>').hide();
+              $('#form_<%= q.id %>').slideUp().delay(1000);
               <% if count == max_count %>
-                $('#finished').show();
+                $('#finished').slideDown();
               <% else %>
-                $('#form_<%= q.id + 1 %>').show();
+                $('#form_<%= q.id + 1 %>').slideDown();
               <% end %>
             }
           });
