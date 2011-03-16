@@ -9,12 +9,21 @@
 
 <h2>Questions</h2>
 
-<div id="question_cont">
+<div class="wrapper">
+
+  <div id="question_cont">
   
+<<<<<<< Updated upstream
   <% count = 0 %>
   <% max_count = @questions.size %>
   <% @questions.each do |q| %>
   <% count = count + 1 %>
+=======
+    <% count = 0 %>
+    <% max_count = @questions.size %>
+    <% @questions.each do |q| %>
+    <% count = count + 1 %>
+>>>>>>> Stashed changes
     <div id="form_<%= q.id %>" class="hide">
       <%= form_for q, :url => update_answer_question_path(q, :format => :json),  do |f| %>
       <p><%= q.question %></p>
@@ -37,11 +46,17 @@
           });
       });
     </script>
+<<<<<<< Updated upstream
   <% end %>
+=======
+    <% end %>
+>>>>>>> Stashed changes
   
-</div>
+  </div>
 
-<div id="finished" class="hide">
-  <h3>Congrats you have finished!</h3>
-  <%= link_to "Click here to see the results", answers_path %>
+  <div id="finished" class="hide">
+    <h3>Congrats you have finished!</h3>
+    <%= link_to "Click here to see the results", answers_path %>
+  </div>
+
 </div>

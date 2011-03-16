@@ -2,3 +2,37 @@
   display: none;
 }
 
+<<<<<<< Updated upstream
+=======
+body { 
+ background-color: #F5E497;  
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0px auto;
+}
+
+#question_cont {
+  border: 1px silver solid;
+  padding: 15px;
+  text-align: center;
+  min-height: 400px;
+}
+
+#question_cont p {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#question_cont select {
+  min-width: 200px;
+  font-size: 20px;
+  padding: 7px;
+}
+>>>>>>> Stashed changes
