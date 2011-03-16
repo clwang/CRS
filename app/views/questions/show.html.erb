@@ -1,21 +1,23 @@
 <h2>Results</h2>
 
-<p>Question: <%= @question.question %></p>
+<div class="wrapper">
+  
 
-<div id="result_cont">
-  <div id="result_left">
-    <p>Possible Answers:</p>
+  <div id="result_cont">
+    <div id="results">
+      <h3>Question: <%= @question.question %></h3>
+      <h3>Possible Answers:</h3>
 
-    <ol>
-      <% @question.panswers.each do |a| %>
-        <li><%= a.p_answer %>  |  <span>Count: <%= a.answer_count %></span></li>
-      <% end %>
-    </ol>
-  </div>
-  <div id="result_right">
-    <img src="<%= build_google_graphs_url('p3',@question.panswers) %>" />
+      <ol>
+        <% @question.panswers.each do |a| %>
+          <li><%= a.p_answer %>  <span class="pipe">|</span> <span>Count: <%= a.answer_count %></span></li>
+        <% end %>
+      </ol>
+    </div>
+    <div id="google_graph">
+      <img src="<%= build_google_graphs_url('p3',@question.panswers) %>" />
+    </div>
+    <%= link_to "Back to Results", answers_path, { :class => 'button' } %>
   </div>
 </div>
 
-
-<%= link_to "Back to Results", answers_path %>

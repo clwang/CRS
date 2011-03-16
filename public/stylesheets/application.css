@@ -6,6 +6,10 @@
   clear: both;
 }
 
+P {
+  color: #fff;
+}
+
 body { 
  background-color: #312F36;  
 }
@@ -19,6 +23,10 @@ h2 {
 .wrapper {
   width: 960px;
   margin: 0px auto;
+}
+
+.pipe {
+  color: #1ABF93;
 }
 
 a.button {
@@ -36,6 +44,8 @@ a.button:hover {
       -moz-transition: -moz-box-shadow 0.2s ease-in-out;
       -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
 }
+
+/* Questions page */
 
 #question_cont {
   border: 3px #6C9AA8 solid;
@@ -64,3 +74,44 @@ a.button:hover {
   font-size: 40px;
   color: #1ABF93;
 }
+
+/* Answers Page */
+
+#answers_list ol,li {
+  margin-left: 120px;
+  padding: 7px;
+  color: white;
+  font-size: 1.2em;
+}
+
+#answers_list li a {
+  color: white;
+  text-decoration: none;
+}
+
+#answers_list li a:hover {
+  color: #1ABF93;
+  background-color: transparent;
+}
+
+/* single results */
+#results h3 {
+  color: #fff;
+  margin-left: 110px;
+}
+
+#result_cont a {
+  margin-left:  100px;
+}
+
+#results, #google_graph {
+  margin-bottom: 20px;
+}
+#google_graph img {
+  margin-left: 100px;
+  border: 2px solid #1ABF93;
+}
+
+
+
+

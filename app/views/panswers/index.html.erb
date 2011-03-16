@@ -1,7 +1,11 @@
 <h2>List of Results</h2>
 
-<ol>
-<% @questions.each do |question| %>
-  <li><%= link_to "#{question.question}", question_path(question) %></li>
-<% end %>
-</ol>
+<div class="wrapper">
+  <div id="answers_list">
+    <ol>
+    <% @questions.each do |question| %>
+      <li><%= link_to "#{question.question}", question_path(question) %></li>
+    <% end %>
+    </ol>
+  </div>
+</div>
