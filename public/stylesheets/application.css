@@ -1,4 +1,36 @@
+
+body{
+	
+	background-color:#757575;
+}
+
 .hide {
   display: none;
 }
 
+#container{
+	
+	background-color: white;
+	width: 500px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+	padding-right: 35px;
+	padding-left: 35px;
+	padding-top:10px;
+}
+
+#con-top{
+	width: 570px;
+	margin: 0 auto;
+	height: 15px;
+	background-image: url("/images/div_top.png");
+}
+
+
+
+#con-bottom{
+	width: 570px;
+	margin: 0 auto;
+	height: 15px;
+	background-image: url("/images/div_bottom.png");
+}

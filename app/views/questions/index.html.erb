@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<%stylesheet_link_tag "application" %>
+
 <%= content_for :javascript do %>
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function() {
@@ -6,6 +9,10 @@
 </script>
 
 <% end %>
+
+
+<div id="con-top"> </div><!-- end con-top div -->
+<div id="container">
 
 <h2>Questions</h2>
 
@@ -45,3 +52,6 @@
   <h3>Congrats you have finished!</h3>
   <%= link_to "Click here to see the results", answers_path %>
 </div>
+
+</div><!-- end container div -->
+<div id="con-bottom"></div><!-- end div con-bottom -->
