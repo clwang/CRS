@@ -6,12 +6,16 @@
   clear: both;
 }
 
-P {
+P, label {
   color: #fff;
 }
 
 body { 
  background-color: #312F36;  
+}
+
+h1 {
+  color: #0C83B4;
 }
 
 h2 {
@@ -80,7 +84,7 @@ a.button:hover {
 #answers_list ol,li {
   margin-left: 120px;
   padding: 7px;
-  color: white;
+  color: #FFF;
   font-size: 1.2em;
 }
 
@@ -107,9 +111,39 @@ a.button:hover {
 #results, #google_graph {
   margin-bottom: 20px;
 }
+
 #google_graph img {
   margin-left: 100px;
   border: 2px solid #1ABF93;
+}
+
+
+/* ADMIN STYLES */
+
+#question_headers ul {
+  margin-left: 140px;
+  list-style-type: none;
+}
+
+#question_headers li {
+  display: inline;
+  margin-right: 60px;
+  color: black;
+}
+.edit_options ul {
+  padding: 0px;
+  margin: 0px;
+}
+.edit_options li { 
+  display: inline; 
+  list-style-type: none; 
+  margin: 0 10px 0 0;
+}
+
+.edit_options li a {
+  font-size: 0.8em;
+  text-decoration: none;
+  padding: 3px;
 }
 
 
