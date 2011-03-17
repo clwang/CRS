@@ -146,6 +146,17 @@ a.button:hover {
   padding: 3px;
 }
 
+a#add_btn {
+  color: white;
+  padding: 3px;
+  text-decoration: none;
+}
+
+a#add_btn:hover{
+  color: #1ABF93;
+  text-decoration: underline;
+}
+
 
 
 
